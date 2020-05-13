@@ -14,7 +14,7 @@
 
 ## Kurulum
 ### Basit Yöntem
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Quiec/AsenaUserBot)
 
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SedenUserBotSupport) ulaşabilirsiniz.
 
