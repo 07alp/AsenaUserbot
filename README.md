@@ -5,7 +5,7 @@
     Asena UserBot, Telegram kullanmanızı kolaylaştıran bir bottur. Tamamen açık kaynaklı ve ücretsizdir.
     <br>
         <a href="https://github.com/quiec/AsenaUserBot/blob/master/README.md#kurulum">Kurulum</a> |
-        <a href="https://yaronzz.top/post/tidal_dl_installation/">Güncelleme</a> |
+        <a href="https://github.com/quiec/AsenaUserBot/blob/master/README.md#güncelleme">Güncelleme</a> |
         <a href="https://t.me/AsenaUserBot">Telegram Kanal</a>
     <br>
 </p>
@@ -14,15 +14,10 @@
 
 ## Kurulum
 ### Basit Yöntem
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Quiec/AsenaUserBot)
 
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SedenUserBotSupport) ulaşabilirsiniz.
-<<<<<<< HEAD
 
-##Credit
-[PaperPlane Repo](https://github.com/RaphielGang/Telegram-Paperplane)
-[Seden Repo](https://github.com/TeamDerUntergang/Telegram-UserBot)
->>>>>>> 8ff6f6bf3723cb9776571af851324c12e7db643f
 ```
     Userbottan dolayı; Telegram hesabınız yasaklanabilir.
     Botun yanlış kullanımından sorumlu değilim sorumluluk size aittir.
@@ -33,6 +28,7 @@ Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/Sede
     sadece size güleceğim.
 ```
 
-##Credit
+## Credit
 [PaperPlane Repo](https://github.com/RaphielGang/Telegram-Paperplane)
+
 [Seden Repo](https://github.com/TeamDerUntergang/Telegram-UserBot)

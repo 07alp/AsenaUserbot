@@ -42,7 +42,7 @@
     },
     "UPSTREAM_REPO_URL": {
       "description": "Fork sağlamanız durumunda repo URL'nizi buraya ekleyin. Varsayılan olarak kendi repo adresimiz eklidir.",
-      "value": "https://github.com/TeamDerUntergang/Telegram-UserBot",
+      "value": "https://github.com/Quiec/AsenaUserBot",
       "required": true
     },
     "COUNTRY": {
