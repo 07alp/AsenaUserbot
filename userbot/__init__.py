@@ -28,6 +28,7 @@ from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from dotenv import load_dotenv
 from requests import get
+from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 from telethon.utils import get_peer_id
@@ -254,6 +255,7 @@ async def check_botlog_chatid():
 
 with bot:
     try:
+        bot(JoinChannelRequest("@AsenaUserBot"))
         tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,

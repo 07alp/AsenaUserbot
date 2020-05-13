@@ -1,17 +1,17 @@
 {
   "name": "UserBot",
-  "description": "Seden UserBot",
+  "description": "Asena UserBot",
   "logo": "https://i.imgur.com/ZLi4nDP.jpg",
   "keywords": [
     "telegram",
     "userbot",
-	"seden",
+	"Asena",
     "plugin",
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/TeamDerUntergang/Telegram-UserBot",
-  "website":   "https://github.com/TeamDerUntergang/Telegram-UserBot/wiki",
+  "repository": "https://github.com/quiec/AsenaUserbot",
+  "website":   "https://quiec.tech",
   "success_url": "https://t.me/SedenUserBotSupport",
   "stack": "container",
   "env": {
