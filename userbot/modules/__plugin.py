@@ -8,17 +8,17 @@
 import asyncio
 import json
 import logging
-import sedenbot
+import userbot
 import re
 import os
 from telethon.tl.types import DocumentAttributeFilename
 import importlib
 
-from sedenbot import CMD_HELP
-from sedenbot.events import sedenify
+from userbot import CMD_HELP
+from userbot.events import register
 
-# Plugin Porter
-@sedenify(outgoing=True, pattern="^.pport")
+# Plugin Porter - UniBorg
+@register(outgoing=True, pattern="^.pport")
 async def pport(event):
     if event.is_reply:
         reply_message = await event.get_reply_message()
@@ -35,23 +35,24 @@ async def pport(event):
     borg2 = r"(@borg\.on\(admin_cmd\(pattern=r\")(.*)(\")(\)\))"
     borg3 = r"(@borg\.on\(admin_cmd\(\")(.*)(\")(\)\))"
 
-    rap = r""
     if re.search(borg1, dosy):
         await event.edit("`1. Tip UniBorg tespit edildi...`")
         komu = re.findall(borg1, dosy)
 
         if len(komu) > 1:
             await event.edit("`Bu dosyanın içinde birden fazla plugin var, bunu portlayamam!`")
-            return
-        komut = komu[0][1]
 
-        degistir = degistir(dosy, komut)
+        komut = komu[0][1]
+        degistir = dosy.replace('@borg.on(admin_cmd(pattern="' + komut + '"))', '@register(outgoing=True, pattern="^.' + komut + '")')
+        degistir = degistir.replace("from userbot.utils import admin_cmd", "from userbot.events import register")
+        degistir = re.sub(r"(from uniborg).*", "from userbot.events import register", degistir)
+        degistir = degistir.replace("def _(event):", "def port_" + komut + "(event):")
+        degistir = degistir.replace("borg.", "event.client.")
         ported = open(f'port_{dosya}', "w").write(degistir)
 
         await event.edit("`Port başarılı dosya yükleniyor...`")
 
         await event.client.send_file(event.chat_id, f"port_{dosya}")
-        await event.delete()
         os.remove(f"port_{dosya}")
         os.remove(f"{dosya}")
     elif re.search(borg2, dosy):
@@ -63,14 +64,16 @@ async def pport(event):
             return
         komut = komu[0][1]
 
-        degistir = degistir(dosy, komut)
-
+        degistir = dosy.replace('@borg.on(admin_cmd(pattern=r"' + komut + '"))', '@register(outgoing=True, pattern="^.' + komut + '")')
+        degistir = degistir.replace("from userbot.utils import admin_cmd", "from userbot.events import register")
+        degistir = re.sub(r"(from uniborg).*", "from userbot.events import register", degistir)
+        degistir = degistir.replace("def _(event):", "def port_" + komut + "(event):")
+        degistir = degistir.replace("borg.", "event.client.")
         ported = open(f'port_{dosya}', "w").write(degistir)
 
         await event.edit("`Port başarılı dosya yükleniyor...`")
 
         await event.client.send_file(event.chat_id, f"port_{dosya}")
-        await event.delete()
         os.remove(f"port_{dosya}")
         os.remove(f"{dosya}")
     elif re.search(borg3, dosy):
@@ -82,38 +85,27 @@ async def pport(event):
             return
 
         komut = komu[0][1]
-        degistir = degistir(dosy, komut)
+
+
+        degistir = dosy.replace('@borg.on(admin_cmd("' + komut + '"))', '@register(outgoing=True, pattern="^.' + komut + '")')
+        degistir = degistir.replace("from userbot.utils import admin_cmd", "from userbot.events import register")
+        degistir = re.sub(r"(from uniborg).*", "from userbot.events import register", degistir)
+        degistir = degistir.replace("def _(event):", "def port_" + komut + "(event):")
+        degistir = degistir.replace("borg.", "event.client.")
+
+
         ported = open(f'port_{dosya}', "w").write(degistir)
 
         await event.edit("`Port başarılı dosya yükleniyor...`")
 
         await event.client.send_file(event.chat_id, f"port_{dosya}")
-        await event.delete()
         os.remove(f"port_{dosya}")
         os.remove(f"{dosya}")
 
-    elif re.search("@register(", dosy):
-        await event.edit("`RaphielGang tespit edildi...`")
-        komu = re.findall("@register(", dosy)
-
-        if len(komu) > 1:
-            await event.edit("`Bu dosyanın içinde birden fazla plugin var, bunu portlayamam!`")
-            return
-
-        komut = komu[0][1]
-        degistir = dosy.replace("@register(", "@sedenify(").replace("from userbot import", "from seden import").replace("from userbot.events import register", "from seden.events import sedenify")
-        ported = open(f'port_{dosya}', "w").write(degistir)
-
-        await event.edit("`Port başarılı dosya yükleniyor...`")
-
-        await event.client.send_file(event.chat_id, f"port_{dosya}")
-        await event.delete()
-        os.remove(f"port_{dosya}")
-        os.remove(f"{dosya}")
     else:
-        await event.edit("`Sanırım bu plugini portlayamam, bilinmeyen plugin türü.`")
+        await event.edit("`UniBorg plugini tespit edilmedi.`")
 
-@sedenify(outgoing=True, pattern="^.pinstall")
+@register(outgoing=True, pattern="^.pinstall")
 async def pins(event):
     if event.is_reply:
         reply_message = await event.get_reply_message()
@@ -160,17 +152,3 @@ async def check_media(reply_message):
         return False
     else:
         return data
-
-def degistir(text, komut):
-    degistir = text.replace('@borg.on(admin_cmd(pattern="' + komut + '"))', '@sedenify(outgoing=True, pattern="^.' + komut + '")')
-    degistir = degistir.replace("from userbot.utils import admin_cmd", "from seden.events import sedenify")
-    degistir = re.sub(r"(from uniborg).*", "from seden.events import sedenify", degistir)
-    degistir = re.sub(r"(logger\.info).*", "", degistir)
-    degistir = degistir.replace("def _(event):", "def port_" + komut + "(event):")
-    degistir = degistir.replace("borg.", "event.client.")
-    degistir = degistir.replace("borg(", "event.client(")
-
-
-    degistir.join('CMD_HELP.update({"{' + komut + '}": "Bu plugin bir port pluginidir."})')
-
-    return degistir

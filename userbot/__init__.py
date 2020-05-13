@@ -76,8 +76,8 @@ else:
                 level=INFO)
 LOGS = getLogger(__name__)
 
-if version_info[0] < 3 or version_info[1] < 8:
-    LOGS.info("En az python 3.8 sürümüne sahip olmanız gerekir."
+if version_info[0] < 3 or version_info[1] < 6:
+    LOGS.info("En az python 3.6 sürümüne sahip olmanız gerekir."
               "Birden fazla özellik buna bağlıdır. Bot kapatılıyor.")
     quit(1)
 

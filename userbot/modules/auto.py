@@ -7,10 +7,10 @@ import time
 from telethon.tl import functions
 from telethon.tl.types import InputMessagesFilterDocument
 
-from sedenbot import CMD_HELP, AUTO_PP, ASYNC_POOL
-from sedenbot.events import sedenify
+from userbot import CMD_HELP, AUTO_PP, ASYNC_POOL
+from userbot.events import register
 
-@sedenify(outgoing=True, pattern="^.auto ?(.*)")
+@register(outgoing=True, pattern="^.auto ?(.*)")
 async def auto(event):
     metod = event.pattern_match.group(1).lower()
     
