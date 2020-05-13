@@ -17,12 +17,10 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SedenUserBotSupport) ulaşabilirsiniz.
-<<<<<<< HEAD
 
 ##Credit
 [PaperPlane Repo](https://github.com/RaphielGang/Telegram-Paperplane)
 [Seden Repo](https://github.com/TeamDerUntergang/Telegram-UserBot)
->>>>>>> 8ff6f6bf3723cb9776571af851324c12e7db643f
 ```
     Userbottan dolayı; Telegram hesabınız yasaklanabilir.
     Botun yanlış kullanımından sorumlu değilim sorumluluk size aittir.
