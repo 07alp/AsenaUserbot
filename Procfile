@@ -1,1 +1,1 @@
-worker: python3 userbot/main.py
+worker: python3 main.py
