@@ -18,6 +18,7 @@
 
 
 Herhangi bir istek & şikâyet & öneri varsa [destek grubuna](https://t.me/SedenUserBotSupport) ulaşabilirsiniz.
+Credit: [PaperPlane Repo](https://github.com/RaphielGang/Telegram-Paperplane) [Seden Repo](https://github.com/TeamDerUntergang/Telegram-UserBot)
 ```
     Userbottan dolayı; Telegram hesabınız yasaklanabilir.
     Botun yanlış kullanımından sorumlu değilim sorumluluk size aittir.
