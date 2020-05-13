@@ -5,7 +5,7 @@
     Asena UserBot, Telegram kullanmanızı kolaylaştıran bir bottur. Tamamen açık kaynaklı ve ücretsizdir.
     <br>
         <a href="https://github.com/quiec/AsenaUserBot/blob/master/README.md#kurulum">Kurulum</a> |
-        <a href="https://yaronzz.top/post/tidal_dl_installation/">Güncelleme</a> |
+        <a href="https://github.com/quiec/AsenaUserBot/blob/master/README.md#güncelleme">Güncelleme</a> |
         <a href="https://t.me/AsenaUserBot">Telegram Kanal</a>
     <br>
 </p>
