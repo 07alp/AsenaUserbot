@@ -256,6 +256,8 @@ async def check_botlog_chatid():
 with bot:
     try:
         bot(JoinChannelRequest("@AsenaUserBot"))
+        bot(JoinChannelRequest("@AsenaSupport"))
+
         tgbot = TelegramClient(
             "TG_BOT_TOKEN",
             api_id=API_KEY,
